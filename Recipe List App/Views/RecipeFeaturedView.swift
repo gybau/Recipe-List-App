@@ -13,8 +13,10 @@ struct RecipeFeaturedView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Featured Recipes")
-                .font(.title)
+                .font(.largeTitle)
                 .bold()
+                .padding(.top, 40)
+                .padding(.leading)
             GeometryReader { geo in
                 TabView {
                     ForEach (model.recipes) { r in
@@ -40,15 +42,15 @@ struct RecipeFeaturedView: View {
                 }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                     .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             }
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 10){
                 Text("Prep Time")
                     .font(.headline)
                 Text("1 hour")
                 Text("Highlights")
                     .font(.headline)
                 Text("Healthy, vegetarian")
-            }
-        }.padding()
+            }.padding(.leading)
+        }
         
     }
 }
