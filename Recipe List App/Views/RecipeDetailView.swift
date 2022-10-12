@@ -11,7 +11,7 @@ struct RecipeDetailView: View {
     
     var recipe:Recipe
     
-    @State var selectedServings = 1
+    @State var selectedServings = 2
     
     var body: some View {
         
@@ -42,7 +42,7 @@ struct RecipeDetailView: View {
                         .padding([.bottom, .top], 5)
                     
                     ForEach (recipe.ingredients) { item in
-                        Text("• " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServings) + item.name)
+                        Text("• " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServings) + " " + item.name.lowercased())
                     }
                 }
                 .padding(.horizontal)
